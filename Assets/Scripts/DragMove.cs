@@ -22,7 +22,9 @@ public class DragMove : MonoBehaviour {
                     deltaY = touchPosition.y - transform.position.y;
                     break;
                 case TouchPhase.Moved:
-                    rigidbody.MovePosition(new Vector2(touchPosition.x - deltaX, touchPosition.y - deltaY));
+                    float x = Mathf.Clamp(touchPosition.x - deltaX, -2.4f, 2.4f);
+                    float y = Mathf.Clamp(touchPosition.y - deltaY, -2.4f, 2.4f);
+                    rigidbody.MovePosition(new Vector2(x, y));
                     break;
                 case TouchPhase.Ended:
                     rigidbody.velocity = Vector2.zero;
