@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 814770581134489791}
   - component: {fileID: 814770581134489790}
   - component: {fileID: 7939683572439144413}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: verticalUpEnemy
   m_TagString: verticalEnemy
   m_Icon: {fileID: 0}
