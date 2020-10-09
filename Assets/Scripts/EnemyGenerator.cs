@@ -21,7 +21,7 @@ public class EnemyGenerator : MonoBehaviour {
     }
 
     private void GenerateEnemies() {
-        int enemiesAmount = Random.Range(1, 5);
+        int enemiesAmount = Random.Range(1, 3);
         for (int i = 0; i < enemiesAmount; ++i) {
             GenerateEnemy();
         }

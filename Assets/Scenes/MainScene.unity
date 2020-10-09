@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 234552306}
-  time: 120
+  time: 60
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
