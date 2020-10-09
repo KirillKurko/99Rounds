@@ -8,8 +8,6 @@ public class EnemyGenerator : MonoBehaviour {
     private float randomX;
     private Vector3 spawnPosition;
     public float spawnRate = 2.0f;
-    private float nextSpawn = 0.0f;
-
 
     void Start() {
         StartCoroutine(EnemyGeneratorCoroutine());
@@ -17,8 +15,15 @@ public class EnemyGenerator : MonoBehaviour {
 
     private IEnumerator EnemyGeneratorCoroutine() {
         while (true) {
-            GenerateEnemy();
+            GenerateEnemies();
             yield return new WaitForSeconds(Mathf.Lerp(0.5f, 2.0f, Random.value));
+        }
+    }
+
+    private void GenerateEnemies() {
+        int enemiesAmount = Random.Range(1, 5);
+        for (int i = 0; i < enemiesAmount; ++i) {
+            GenerateEnemy();
         }
     }
 
