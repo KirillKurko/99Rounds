@@ -12,7 +12,7 @@ public class DownVerticalMovement : MonoBehaviour {
     }
 
     void Update() {
-        if (transform.position.y >= 2.6) {
+        if (transform.position.y <= -2.6) {
             Destroy(gameObject);
         }
         MoveDown();

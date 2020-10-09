@@ -11,13 +11,13 @@ public class UpVerticalMovement : MonoBehaviour {
     }
 
     void Update() {
-        if (transform.position.y <= -2.6) {
+        if (transform.position.y >= 2.6) {
             Destroy(gameObject);
         }
-        MoveDown();
+        MoveUp();
     }
 
-    private void MoveDown() {
-        rigidbody.velocity = -transform.up * speed;
+    private void MoveUp() {
+        rigidbody.velocity = transform.up * speed;
     }
 }
