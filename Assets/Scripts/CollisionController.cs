@@ -1,16 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CollisionController : MonoBehaviour {
 
-    void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.gameObject.tag.Equals("player")) {
-            Destroy(collider.gameObject);
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag.Equals("player")) {
+            collision.gameObject.GetComponent<PlayerController>().decrementHealth();
             Destroy(gameObject);
-            Scene scene = SceneManager.GetActiveScene(); 
-            SceneManager.LoadScene(scene.name);
         }
     }
 }
