@@ -10,13 +10,15 @@ public class EnemyGenerator : MonoBehaviour {
     public float spawnRate = 2.0f;
     private float nextSpawn = 0.0f;
 
-    void Update() {
-        if (Time.time > nextSpawn) {
-            nextSpawn = Time.time + spawnRate;
-            int enemiesAmount = Random.Range(1, 5);
-            for (int i = 0; i < enemiesAmount; ++i) {
-                GenerateEnemy();
-            }
+
+    void Start() {
+        StartCoroutine(EnemyGeneratorCoroutine());
+    }
+
+    private IEnumerator EnemyGeneratorCoroutine() {
+        while (true) {
+            GenerateEnemy();
+            yield return new WaitForSeconds(Mathf.Lerp(0.5f, 2.0f, Random.value));
         }
     }
 
