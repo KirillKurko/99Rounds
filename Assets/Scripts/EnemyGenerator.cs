@@ -81,7 +81,7 @@ public class EnemyGenerator : MonoBehaviour {
         rightEnemyInstanceScript.speed = enemySpeed;
 
         GameObject leftEnemyInstance = Instantiate(leftEnemy, new Vector3(-leftPosition, -randomY, -1), Quaternion.identity);
-        LeftHorizontalMovement lefrEnemyInstanceScript = (LeftHorizontalMovement) leftEnemyInstance.GetComponent("LeftHorizontalMovement");
-        lefrEnemyInstanceScript.speed = enemySpeed;
+        LeftHorizontalMovement leftEnemyInstanceScript = (LeftHorizontalMovement) leftEnemyInstance.GetComponent("LeftHorizontalMovement");
+        leftEnemyInstanceScript.speed = enemySpeed;
     }
 }
