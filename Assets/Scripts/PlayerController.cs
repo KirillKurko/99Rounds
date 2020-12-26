@@ -9,14 +9,23 @@ public class PlayerController : MonoBehaviour {
     public GameObject firstHealth;
     public GameObject secondHealth;
     public GameObject thirdHealth;
+    public GameObject fourthHealth;
+    public GameObject fifthHealth;
+
 
     public void Start() {
-        health = 3;
+        health = 5;
     }
  
     public void decrementHealth() {
         --health;
         switch (health) {
+            case 4:
+                Destroy(fifthHealth);
+                break;
+            case 3:
+                Destroy(fourthHealth);
+                break;
             case 2:
                 Destroy(thirdHealth);
                 break;
