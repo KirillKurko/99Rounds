@@ -13,11 +13,10 @@ public class PlayerController : MonoBehaviour {
     public void Start() {
         health = 3;
     }
-
-    public void Update() {
+ 
+    public void decrementHealth() {
+        --health;
         switch (health) {
-            case 3:
-                break;
             case 2:
                 Destroy(thirdHealth);
                 break;
@@ -31,9 +30,5 @@ public class PlayerController : MonoBehaviour {
                 SceneManager.LoadScene(scene.name);
                 break;
         }
-    }
-
-    public void decrementHealth() {
-        --health;
     }
 }
